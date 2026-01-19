@@ -118,14 +118,14 @@ body {
   overflow: hidden;
   background: transparent;
   padding: 16px 0 36px;
-  margin-top: -24px;
+  margin-top: -90px;
 }
 
 .belt-track {
-  height: 170px;
+  height: 260px;
   background-image: url("assets/bag-line.png");
   background-repeat: repeat-x;
-  background-size: auto 170px;
+  background-size: auto 260px;
   animation: beltMove 12s linear infinite;
   opacity: 0.95;
 }
@@ -149,7 +149,7 @@ body {
 }
 
 .box-row img {
-  width: 220px;
+  width: 300px;
   height: auto;
   border-radius: 20px;
   box-shadow: none;
@@ -179,11 +179,11 @@ body {
   }
 
   .box-row img {
-    width: 170px;
+    width: 240px;
   }
 
   .belt-track {
-    height: 130px;
-    background-size: auto 130px;
+    height: 185px;
+    background-size: auto 185px;
   }
 }
