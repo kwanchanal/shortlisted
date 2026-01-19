@@ -1,0 +1,189 @@
+:root {
+  --ink: #1d1d1d;
+  --muted: #808080;
+  --border: #e7e7e7;
+  --green: #64b48c;
+  --chip-bg: #f8f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Kanit", "Noto Sans Thai", sans-serif;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px 40px;
+  text-align: center;
+  gap: 18px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(36px, 6vw, 54px);
+  font-weight: 600;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  width: min(520px, 90vw);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--ink);
+}
+
+.search input::placeholder {
+  color: var(--muted);
+}
+
+.search svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.spark {
+  color: var(--green);
+  font-size: 18px;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.go-btn {
+  border: none;
+  background: var(--green);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: var(--chip-bg);
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(100, 180, 140, 0.12);
+}
+
+.belt {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  padding: 16px 0 36px;
+  margin-top: -24px;
+}
+
+.belt-track {
+  height: 170px;
+  background-image: url("assets/bag-line.png");
+  background-repeat: repeat-x;
+  background-size: auto 170px;
+  animation: beltMove 12s linear infinite;
+  opacity: 0.95;
+}
+
+.belt-boxes {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  animation: boxesMove 14s linear infinite;
+}
+
+.box-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.box-row img {
+  width: 220px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+@keyframes beltMove {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -800px;
+  }
+}
+
+@keyframes boxesMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .box-row img {
+    width: 170px;
+  }
+
+  .belt-track {
+    height: 130px;
+    background-size: auto 130px;
+  }
+}
